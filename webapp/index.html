@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Camper Web Panel</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <h1>Camper Web</h1>
+            <select id="lang-selector" onchange="changeLanguage(this.value)">
+                <option value="pl">Polski</option>
+                <option value="en">English</option>
+                <option value="de">Deutsch</option>
+            </select>
+        </div>
+        <!-- Wskaźnik wzorowany na "CAN BUS Online" z wyświetlacza -->
+        <div id="status-badge" class="status-badge disconnected">
+            <span class="status-dot"></span>
+            <span id="status-text" data-i18n="status_wait">Oczekiwanie...</span>
+        </div>
+    </header>
+
+    <main>
+        <section class="card">
+            <h2 data-i18n="battery_voltages">Zasilanie (V)</h2>
+            <div class="voltages-grid">
+                <!-- 1. Świeża woda (Czerwony, v1) -->
+                <div class="voltage-box">
+                    <span class="label" data-i18n="v_fresh">Świeża woda</span>
+                    <span class="value" id="v1">-- V</span>
+                    <div class="bar-bg"><div class="bar-fill fresh-fill" id="bar-v1"></div></div>
+                </div>
+                <!-- 2. Szara woda (Szary, v2) -->
+                <div class="voltage-box">
+                    <span class="label" data-i18n="v_waste">Szara woda</span>
+                    <span class="value" id="v2">-- V</span>
+                    <div class="bar-bg"><div class="bar-fill waste-fill" id="bar-v2"></div></div>
+                </div>
+                <!-- 3. Bateria (Niebieski, v3) -->
+                <div class="voltage-box">
+                    <span class="label" data-i18n="v_batt">Bateria</span>
+                    <span class="value" id="v3">-- V</span>
+                    <div class="bar-bg"><div class="bar-fill batt-fill" id="bar-v3"></div></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="card">
+            <h2 data-i18n="relays">Sterowanie</h2>
+            <div class="relays-grid" id="relays-container">
+                <!-- Generowane przez JS -->
+            </div>
+        </section>
+
+        <section class="card">
+            <h2 data-i18n="inputs">Wejścia cyfrowe</h2>
+            <div class="inputs-grid" id="inputs-container">
+                <!-- Generowane przez JS -->
+            </div>
+        </section>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
