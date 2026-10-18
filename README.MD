@@ -8,7 +8,7 @@ A professional, modular, production-grade I/O and relay controller board powered
 
 | Physical Relay Board & OLED Display | Web Application Control UI |
 | :---: | :---: |
-| *[Insert screenshot of hardware / OLED setup here]* | *[Insert screenshot of WebApp UI here]* |
+| *![alt text](image-1.png) | ![alt text](image.png) |
 
 ---
 
